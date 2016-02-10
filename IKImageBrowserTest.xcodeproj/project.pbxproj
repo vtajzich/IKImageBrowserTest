@@ -13,6 +13,10 @@
 		FAE70E7E1C6BA04E000999B1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE70E7C1C6BA04E000999B1 /* Main.storyboard */; };
 		FAE70E891C6BA04E000999B1 /* IKImageBrowserTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE70E881C6BA04E000999B1 /* IKImageBrowserTestTests.swift */; };
 		FAE70E941C6BA04E000999B1 /* IKImageBrowserTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE70E931C6BA04E000999B1 /* IKImageBrowserTestUITests.swift */; };
+		FAE70EA31C6BA0EA000999B1 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE70EA11C6BA0EA000999B1 /* Photo.swift */; };
+		FAE70EA61C6BA145000999B1 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE70EA51C6BA145000999B1 /* Quartz.framework */; };
+		FAE70EA81C6BA164000999B1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE70EA71C6BA164000999B1 /* Cocoa.framework */; };
+		FAE70EAA1C6BA16C000999B1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE70EA91C6BA16C000999B1 /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		FAE70E8F1C6BA04E000999B1 /* IKImageBrowserTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IKImageBrowserTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE70E931C6BA04E000999B1 /* IKImageBrowserTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IKImageBrowserTestUITests.swift; sourceTree = "<group>"; };
 		FAE70E951C6BA04E000999B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAE70EA11C6BA0EA000999B1 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		FAE70EA51C6BA145000999B1 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		FAE70EA71C6BA164000999B1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		FAE70EA91C6BA16C000999B1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE70EAA1C6BA16C000999B1 /* CoreData.framework in Frameworks */,
+				FAE70EA81C6BA164000999B1 /* Cocoa.framework in Frameworks */,
+				FAE70EA61C6BA145000999B1 /* Quartz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +86,9 @@
 		FAE70E6A1C6BA04E000999B1 = {
 			isa = PBXGroup;
 			children = (
+				FAE70EA91C6BA16C000999B1 /* CoreData.framework */,
+				FAE70EA71C6BA164000999B1 /* Cocoa.framework */,
+				FAE70EA51C6BA145000999B1 /* Quartz.framework */,
 				FAE70E751C6BA04E000999B1 /* IKImageBrowserTest */,
 				FAE70E871C6BA04E000999B1 /* IKImageBrowserTestTests */,
 				FAE70E921C6BA04E000999B1 /* IKImageBrowserTestUITests */,
@@ -100,6 +114,7 @@
 				FAE70E7A1C6BA04E000999B1 /* Assets.xcassets */,
 				FAE70E7C1C6BA04E000999B1 /* Main.storyboard */,
 				FAE70E7F1C6BA04E000999B1 /* Info.plist */,
+				FAE70EA11C6BA0EA000999B1 /* Photo.swift */,
 			);
 			path = IKImageBrowserTest;
 			sourceTree = "<group>";
@@ -254,6 +269,7 @@
 			files = (
 				FAE70E791C6BA04E000999B1 /* ViewController.swift in Sources */,
 				FAE70E771C6BA04E000999B1 /* AppDelegate.swift in Sources */,
+				FAE70EA31C6BA0EA000999B1 /* Photo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

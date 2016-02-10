@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10102" systemVersion="15E39c" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10102"/>
+        <plugIn identifier="com.apple.imagekit.ibplugin" version="10102"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,12 +643,12 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="IKImageBrowserTest" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
@@ -667,11 +669,55 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="IKImageBrowserTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView horizontalLineScroll="5" horizontalPageScroll="10" verticalLineScroll="0.0" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aT-f7-S2C">
+                                <rect key="frame" x="-1" y="-1" width="482" height="272"/>
+                                <clipView key="contentView" id="6rK-QF-ZBj">
+                                    <rect key="frame" x="1" y="1" width="181" height="94"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.52138721942901611" allowsReordering="YES" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yWk-FX-YzG">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                            <ikCellsStyle key="cellsStyleMask" shadowed="YES" outlined="YES" titled="YES" subtitled="YES"/>
+                                            <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
+                                            <size key="cellSize" width="100" height="100"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="aPa-qh-bMg"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="djd-Gs-58v"/>
+                                            </connections>
+                                        </ikImageBrowserView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="yWk-FX-YzG" firstAttribute="leading" secondItem="6rK-QF-ZBj" secondAttribute="leading" id="Bzt-QR-MUW"/>
+                                        <constraint firstAttribute="trailing" secondItem="yWk-FX-YzG" secondAttribute="trailing" id="jIL-Uw-id5"/>
+                                        <constraint firstItem="yWk-FX-YzG" firstAttribute="top" secondItem="6rK-QF-ZBj" secondAttribute="top" id="msl-fX-3Fh"/>
+                                        <constraint firstAttribute="bottom" secondItem="yWk-FX-YzG" secondAttribute="bottom" id="pxs-kZ-Wx7"/>
+                                    </constraints>
+                                </clipView>
+                                <scroller key="horizontalScroller" verticalHuggingPriority="750" horizontal="YES" id="iKL-Ay-fIu">
+                                    <rect key="frame" x="1" y="79" width="181" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="qoT-gB-v0P">
+                                    <rect key="frame" x="166" y="1" width="16" height="94"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="5aT-f7-S2C" firstAttribute="centerY" secondItem="m2S-Jp-Qdl" secondAttribute="centerY" id="Q5g-3R-EWJ"/>
+                            <constraint firstItem="5aT-f7-S2C" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-1" id="jGq-C1-qBX"/>
+                            <constraint firstItem="5aT-f7-S2C" firstAttribute="centerX" secondItem="m2S-Jp-Qdl" secondAttribute="centerX" id="qNY-2b-HDI"/>
+                            <constraint firstItem="5aT-f7-S2C" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-1" id="tKd-53-eO8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageBrowserView" destination="yWk-FX-YzG" id="sfH-vd-10u"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
